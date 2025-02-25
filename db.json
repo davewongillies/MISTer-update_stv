@@ -1,6 +1,6 @@
 {
   "db_id": "update_stv",
-  "timestamp": 1740454670,
+  "timestamp": 1740456182,
   "default_options": {
     "filter": "update_stv"
   },
@@ -13,5 +13,9 @@
       "url": "https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/refs/heads/master/Scripts/update_stv.sh"
     }
   },
-  "folders": {}
+  "folders": {
+    "Scripts": {},
+    "Scripts/.config": {},
+    "Scripts/.config/update_stv": {}
+  }
 }
