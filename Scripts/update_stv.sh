@@ -40,7 +40,7 @@ manage_rbfs() {
       echo 0 > $update_stv_config_path/mra_version
   fi
 
-  stv_rbf_symlink="$(readlink /media/fat/_Arcade/cores/ST-V.rbf)"
+  stv_rbf_symlink="$(readlink /media/fat/_Arcade/cores/ST-V.rbf; true)"
 
   if [ "${stv_rbf_symlink}" != "${stv_rbf}" ]; then
     echo Linking new version $stv_rbf to /media/fat/_Arcade/cores/ST-V.rbf...
