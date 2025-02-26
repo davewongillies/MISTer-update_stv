@@ -1,6 +1,8 @@
-# update-stv.sh
+# update_stv.sh
 
-A simple update script for keeping the latest version of the ST-V core setup and the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA) for use with the ST-V core on the MiSTer.
+A simple update script for keeping the latest version of the ST-V core setup and
+the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA) for use with the ST-V
+core on the MiSTer.
 
 ## Prerequistes
 
@@ -27,11 +29,14 @@ db_url = https://raw.githubusercontent.com/davewongillies/MiSTer-update_stv/db/d
 
 Some of the settings of this script can be changed by creating the file `/media/fat/Scripts/update_stv.ini`
 
-* `stv_rbf_type`: the type of ST-V rbf file, eg: `"unstable"`, `"DualSDRAM_unstable"`
-* `stv_rbf_path`: the path where to look for your ST-V rbf core file, Default: `/media/fat/_Unstable`
+* `stv_rbf_type`: the type of ST-V rbf file, eg: `"unstable"`, `"DualSDRAM_unstable"`.
+   Default: `unstable`
+* `stv_rbf_path`: the path where to look for your ST-V rbf core file.
+   Default: `/media/fat/_Unstable`
 * `manage_rbf`: whether `update_stv` will manage the symlinking of the core rbf file
-   or not. For people who want to manually copy the core rbf file and just have the
-   MRAs managed by this script.
+   or not. For people who want to manually copy the core rbf file and only have the
+   MRAs managed by this script. Set to either `true` or `false`.
+   Default: `true`
 
 ### Example config
 
@@ -42,9 +47,10 @@ stv_rbf_type="DualSDRAM_unstable"
 An example ini configuration file can also be found in `/media/fat/Scripts/update_stv.ini.example`.
 This can be copied to `/media/fat/Scripts/update_stv.ini`.
 
-**NOTE** If copying this file from Windows be sure that in your editor of choice
-that you set Unix line (LF) endings for `update_stv.ini`.
+**NOTE** If copying this file from Windows to your MiSTer be sure that in your
+editor of choice that you set Unix line (LF) endings for `update_stv.ini`.
 
 ## Keeping things up to date
 
-Whenever the ST-V unstable nightly cores are updated or there's a new version of the ST-V MRAs, run `update_stv` from the Scripts menu
+Whenever the ST-V unstable nightly cores are updated or there's a new version of
+the ST-V MRAs, run `update_stv` from the Scripts menu
