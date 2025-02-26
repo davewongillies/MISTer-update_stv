@@ -4,8 +4,8 @@ A simple update script for keeping the latest version of the ST-V core setup and
 
 ## Prerequistes
 
-* [`update_all.sh`](https://github.com/theypsilon/Update_All_MiSTer)
-* unstable nightlies is setup in `/media/fat/downloader.ini`
+* unstable nightlies setup in `/media/fat/downloader.ini` if you want to
+  automatically have unstable cores downloaded for you (recommended):
 
 ```ini
 [unstable_nightlies_folder]
@@ -18,7 +18,7 @@ db_url = https://raw.githubusercontent.com/MiSTer-unstable-nightlies/Unstable_Fo
 
 ```init
 [update_stv]
-db_url = https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/db/db.json.zip
+db_url = https://raw.githubusercontent.com/davewongillies/MiSTer-update_stv/db/db.json.zip
 ```
 
 2. Run `update_stv` from the Scripts menu on your MiSTer
@@ -30,7 +30,7 @@ Some of the settings of this script can be changed by creating the file `/media/
 * `stv_rbf_type`: the type of ST-V rbf file, eg: `"unstable"`, `"DualSDRAM_unstable"`
 * `stv_rbf_path`: the path where to look for your ST-V rbf core file, Default: `/media/fat/_Unstable`
 * `manage_rbf`: whether `update_stv` will manage the symlinking of the core rbf file
-   or not. For people who want to manually setup the rbf file and just have the
+   or not. For people who want to manually copy the core rbf file and just have the
    MRAs managed by this script.
 
 ### Example config
