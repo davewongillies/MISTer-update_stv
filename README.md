@@ -23,7 +23,8 @@ db_url = https://raw.githubusercontent.com/MiSTer-unstable-nightlies/Unstable_Fo
 db_url = https://raw.githubusercontent.com/davewongillies/MiSTer-update_stv/db/db.json.zip
 ```
 
-2. Run `update_stv` from the Scripts menu on your MiSTer
+2. Run `update` or `update_all` from the Scripts menu on your MiSTer
+3. Run `update_stv` from the Scripts menu on your MiSTer
 
 ## Configuration
 
