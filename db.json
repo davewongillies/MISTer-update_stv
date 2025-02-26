@@ -1,16 +1,23 @@
 {
   "db_id": "update_stv",
-  "timestamp": 1740457359,
+  "timestamp": 1740542493,
   "default_options": {
     "filter": "update_stv"
   },
   "files": {
     "Scripts/update_stv.sh": {
-      "hash": "5742d67673e25d0ffd0cf40aa16e9878",
+      "hash": "eb76ecb7d80bd76f3d7c12b3f2acb5b6",
       "overwrite": true,
       "reboot": false,
-      "size": 2112,
-      "url": "https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/refs/heads/master/Scripts/update_stv.sh"
+      "size": 2714,
+      "url": "https://raw.githubusercontent.com/davewongillies/MiSTer-update_stv/Scripts/update_stv.sh"
+    },
+    "Scripts/update_stv.ini.example": {
+      "hash": "ed2d32ace49db6377d11b16fac7e2816",
+      "overwrite": true,
+      "reboot": false,
+      "size": 329,
+      "url": "https://raw.githubusercontent.com/davewongillies/MiSTer-update_stv/Scripts/update_stv.ini.example"
     }
   },
   "folders": {

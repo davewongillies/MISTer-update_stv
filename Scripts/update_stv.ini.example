@@ -1,0 +1,10 @@
+# Copy this to /media/fat/Scripts/update_stv.ini if you want
+#
+# Example on an alternate path to the default of /media/fat/_Unstable
+stv_rbf_path=/media/fat/Unstable
+
+# Example for DualSDRAM
+stv_rbf_type="DualSDRAM_unstable"
+
+# Set to false if you don't want update_stv managing /media/fat/_Arcade/cores/ST-V.rbf
+manage_rbf=true

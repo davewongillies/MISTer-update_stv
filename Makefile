@@ -1,5 +1,10 @@
-all:
-	@echo "Updating db.json"
-	@yq -i '.files."Scripts/update_stv.sh".hash = "$(shell md5sum Scripts/update_stv.sh|cut -f1 -d" ")"' db.json
-	@yq -i '.files."Scripts/update_stv.sh".size = $(shell du -sb Scripts/update_stv.sh|cut -f1)' db.json
-	@yq -i '.timestamp = $(shell date +%s)' db.json
+DB_JSON := db.json
+
+all: Scripts/update_stv.ini.example Scripts/update_stv.sh
+	@echo "Updating ${DB_JSON}"
+	@yq -i '.timestamp = $(shell date +%s)' ${DB_JSON}
+
+.PHONY: Scripts/update_stv.sh Scripts/update_stv.ini.example
+Scripts/update_stv.sh Scripts/update_stv.ini.example:
+	@yq -i '.files."$@".hash = "$(shell md5sum $@|cut -f1 -d" ")"' ${DB_JSON}
+	@yq -i '.files."$@".size = $(shell du -sb $@|cut -f1)' ${DB_JSON}

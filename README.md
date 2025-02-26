@@ -18,7 +18,7 @@ db_url = https://raw.githubusercontent.com/MiSTer-unstable-nightlies/Unstable_Fo
 
 ```init
 [update_stv]
-db_url = https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/refs/heads/master/db.json
+db_url = https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/db/db.json.zip
 ```
 
 2. Run `update_stv` from the Scripts menu on your MiSTer
@@ -29,12 +29,21 @@ Some of the settings of this script can be changed by creating the file `/media/
 
 * `stv_rbf_type`: the type of ST-V rbf file, eg: `"unstable"`, `"DualSDRAM_unstable"`
 * `stv_rbf_path`: the path where to look for your ST-V rbf core file, Default: `/media/fat/_Unstable`
+* `manage_rbf`: whether `update_stv` will manage the symlinking of the core rbf file
+   or not. For people who want to manually setup the rbf file and just have the
+   MRAs managed by this script.
 
 ### Example config
 
 ```ini
 stv_rbf_type="DualSDRAM_unstable"
 ```
+
+An example ini configuration file can also be found in `/media/fat/Scripts/update_stv.ini.example`.
+This can be copied to `/media/fat/Scripts/update_stv.ini`.
+
+**NOTE** If copying this file from Windows be sure that in your editor of choice
+that you set Unix line (LF) endings for `update_stv.ini`.
 
 ## Keeping things up to date
 
