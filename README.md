@@ -4,27 +4,24 @@ A simple update script for keeping the latest version of the ST-V core setup and
 the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA) for use with the ST-V
 core on the MiSTer.
 
-## Prerequistes
+## Setup
 
-* unstable nightlies setup in `/media/fat/downloader.ini` if you want to
-  automatically have unstable cores downloaded for you (recommended):
+1. **IF** you don't have unstable nightlies setup add it to `/media/fat/downloader.ini`:
 
 ```ini
 [unstable_nightlies_folder]
 db_url = https://raw.githubusercontent.com/MiSTer-unstable-nightlies/Unstable_Folder_MiSTer/refs/heads/main/db_unstable_nightlies_folder.json
 ```
 
-## Setup
+2. Add `update_stv` to `/media/fat/downloader.ini`:
 
-1. Add the following to `/media/fat/downloader.ini`
-
-```init
+```ini
 [update_stv]
 db_url = https://raw.githubusercontent.com/davewongillies/MiSTer-update_stv/db/db.json.zip
 ```
 
-2. Run `update` or `update_all` from the Scripts menu on your MiSTer
-3. Run `update_stv` from the Scripts menu on your MiSTer
+3. Run `update` or `update_all` from the Scripts menu on your MiSTer
+4. Run `update_stv` from the Scripts menu on your MiSTer
 
 ## Configuration
 
