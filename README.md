@@ -10,7 +10,7 @@ core on the MiSTer.
 
 ```ini
 [unstable_nightlies_folder]
-db_url = https://raw.githubusercontent.com/MiSTer-unstable-nightlies/Unstable_Folder_MiSTer/refs/heads/main/db_unstable_nightlies_folder.json
+db_url = https://raw.githubusercontent.com/MiSTer-unstable-nightlies/Unstable_Folder_MiSTer/main/db_unstable_nightlies_folder.json
 ```
 
 2. Add `update_stv` to `/media/fat/downloader.ini`:
