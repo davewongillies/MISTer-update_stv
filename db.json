@@ -1,6 +1,6 @@
 {
   "db_id": "update_stv",
-  "timestamp": 1740754402,
+  "timestamp": 1740820591,
   "base_files_url": "https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/master/",
   "default_options": {
     "filter": "update_stv"
@@ -12,13 +12,6 @@
       "reboot": false,
       "size": 2720,
       "url": "Scripts/update_stv.sh"
-    },
-    "Scripts/update_stv.ini.example": {
-      "hash": "8967569a88254278871059d15c19adb7",
-      "overwrite": true,
-      "reboot": false,
-      "size": 323,
-      "url": "Scripts/update_stv.ini.example"
     }
   },
   "folders": {
