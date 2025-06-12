@@ -79,11 +79,11 @@ manage_mras() {
     unzip -o /tmp/stv-mra.zip -d /media/fat/_Arcade/
     echo "$mra_latest_version" > $update_stv_config_path/mra_version
     rm -f /tmp/stv-mra.zip
-    rm -f $stv_mra_json
     echo "STV-MRA version ${mra_latest_version} installed"
   else
     echo "STV-MRA is up to date at version $mra_current_version"
   fi
+  rm -f $stv_mra_json
 }
 
 migrate_dbjson() {
