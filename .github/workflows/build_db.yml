@@ -23,5 +23,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DB_ID: update_stv
-        FINDER_IGNORE: "db.json Makefile"
         BASE_FILES_URL: "https://raw.githubusercontent.com/davewongillies/MISTer-update_stv/master/"
