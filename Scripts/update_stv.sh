@@ -56,11 +56,19 @@ manage_rbfs() {
   stv_rbf_symlink="$(readlink /media/fat/_Arcade/cores/ST-V.rbf; true)"
 
   if [ "${stv_rbf_symlink}" != "${stv_rbf}" ]; then
-    echo "Linking new version $stv_rbf to /media/fat/_Arcade/cores/ST-V.rbf..."
+    if find /media/fat/_Arcade/cores -type f -name "ST-V_*.rbf"|grep . ; then
+      rm -f /media/fat/_Arcade/cores/ST-V.rbf
+    else
+      echo "Linking new version $stv_rbf to /media/fat/_Arcade/cores/ST-V.rbf..."
 
-    ln --symbolic --force --verbose ${stv_rbf} /media/fat/_Arcade/cores/ST-V.rbf
+      ln --symbolic --force --verbose ${stv_rbf} /media/fat/_Arcade/cores/ST-V.rbf
+    fi
   else
+    if find /media/fat/_Arcade/cores -type f -name "ST-V_*.rbf"|grep . ; then
+      rm -f /media/fat/_Arcade/cores/ST-V.rbf
+    else
       echo /media/fat/_Arcade/cores/ST-V.rbf is up to date
+    fi
   fi
 }
 
