@@ -24,6 +24,19 @@ if [ -e /media/fat/Scripts/update_stv.ini ]; then
   source /media/fat/Scripts/update_stv.ini
 fi
 
+
+print_banner() {
+echo "
+                          ___________  _    __
+                         / ___/_  __/ | |  / /
+                         \__ \ / /____| | / /
+                        ___/ // /_____/ |/ /
+                       /____//_/      |___/
+
+                 SEGA TITAN VIDEO GAME SYSTEM UPDATER
+"
+}
+
 manage_rbfs() {
   if [ "${manage_rbf}" != "true" ]; then
     return
@@ -32,7 +45,7 @@ manage_rbfs() {
   stv_rbf=$(find ${stv_rbf_path} -name "ST-V_${stv_rbf_type}*.rbf")
 
   if [ "${stv_rbf}" = "" ]; then
-    echo ${stv_rbf_path}/ST-V_${stv_rbf_type}*.rbf not found, exiting
+    echo "${stv_rbf_path}/ST-V_${stv_rbf_type}*.rbf not found, exiting"
     exit 0
   fi
 
@@ -43,7 +56,7 @@ manage_rbfs() {
   stv_rbf_symlink="$(readlink /media/fat/_Arcade/cores/ST-V.rbf; true)"
 
   if [ "${stv_rbf_symlink}" != "${stv_rbf}" ]; then
-    echo Linking new version $stv_rbf to /media/fat/_Arcade/cores/ST-V.rbf...
+    echo "Linking new version $stv_rbf to /media/fat/_Arcade/cores/ST-V.rbf..."
 
     ln --symbolic --force --verbose ${stv_rbf} /media/fat/_Arcade/cores/ST-V.rbf
   else
@@ -61,15 +74,15 @@ manage_mras() {
   mra_current_version=$(cat /media/fat/Scripts/.config/update_stv/mra_version)
 
   if [ "$mra_latest_version" != "$mra_current_version" ]; then
-    echo New version $mra_latest_version found, downloading release asset...
-    curl -L -k -sS $(jq -r .assets[].browser_download_url < $stv_mra_json) > /tmp/stv-mra.zip
+    echo "New version $mra_latest_version found, downloading release asset..."
+    curl -L -k -sS "$(jq -r .assets[].browser_download_url < $stv_mra_json)" > /tmp/stv-mra.zip
     unzip -o /tmp/stv-mra.zip -d /media/fat/_Arcade/
-    echo $mra_latest_version > $update_stv_config_path/mra_version
+    echo "$mra_latest_version" > $update_stv_config_path/mra_version
     rm -f /tmp/stv-mra.zip
     rm -f $stv_mra_json
-    echo STV-MRA version ${mra_latest_version} installed
+    echo "STV-MRA version ${mra_latest_version} installed"
   else
-    echo STV-MRA is up to date at version $mra_current_version
+    echo "STV-MRA is up to date at version $mra_current_version"
   fi
 }
 
@@ -82,6 +95,7 @@ migrate_dbjson() {
   fi
 }
 
+print_banner
 migrate_dbjson
 manage_rbfs
 manage_mras
