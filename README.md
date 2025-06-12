@@ -1,5 +1,7 @@
 # update_stv.sh
 
+![Sega Titan Video logo](./.github/Sega_Titan_Logo.png)
+
 A simple update script for keeping the latest version of the ST-V core setup and
 the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA) for use with the ST-V
 core on the MiSTer.
