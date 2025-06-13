@@ -2,9 +2,14 @@
 
 ![Sega Titan Video logo](./.github/Sega_Titan_Logo.png)
 
-A simple update script for keeping the latest version of the ST-V core setup and
-the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA) for use with the ST-V
-core on the MiSTer.
+A simple update script for downloading the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA)
+for use with the ST-V core on the MiSTer.
+
+## Notice
+
+Now that the ST-V core is stable this script no longer sets up the unstable symlinks.
+It *only* downloads the MRAs. And MRA management will get merged in to `update_all`
+soon. Once that occurs this script will be retired.
 
 ## Setup
 
@@ -52,5 +57,5 @@ editor of choice that you set Unix line (LF) endings for `update_stv.ini`.
 
 ## Keeping things up to date
 
-Whenever the ST-V unstable nightly cores are updated or there's a new version of
-the ST-V MRAs, run `update_stv` from the Scripts menu
+Whenever there's a new version of the ST-V MRAs, run `update_stv` from the
+Scripts menu.
