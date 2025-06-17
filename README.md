@@ -1,6 +1,8 @@
-# update_stv.sh
+<p align="center">
+  <img src="./.github/Sega_Titan_Logo.png">
+</p>
 
-![Sega Titan Video logo](./.github/Sega_Titan_Logo.png)
+# update_stv.sh
 
 A simple update script for downloading the latest [ST-V MRAs](https://github.com/zakk4223/STV-MRA)
 for use with the ST-V core on the MiSTer.
