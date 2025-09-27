@@ -72,28 +72,6 @@ manage_rbfs() {
   fi
 }
 
-manage_mras() {
-  stv_mra_json=/tmp/stv-mra.json
-
-  echo Checking STV-MRA for latest version
-  curl -k -sS https://api.github.com/repos/zakk4223/STV-MRA/releases/latest > $stv_mra_json
-
-  mra_latest_version=$(jq -r .name < $stv_mra_json)
-  mra_current_version=$(cat /media/fat/Scripts/.config/update_stv/mra_version)
-
-  if [ "$mra_latest_version" != "$mra_current_version" ]; then
-    echo "New version $mra_latest_version found, downloading release asset..."
-    curl -L -k -sS "$(jq -r .assets[].browser_download_url < $stv_mra_json)" > /tmp/stv-mra.zip
-    unzip -o /tmp/stv-mra.zip -d /media/fat/_Arcade/
-    echo "$mra_latest_version" > $update_stv_config_path/mra_version
-    rm -f /tmp/stv-mra.zip
-    echo "STV-MRA version ${mra_latest_version} installed"
-  else
-    echo "STV-MRA is up to date at version $mra_current_version"
-  fi
-  rm -f $stv_mra_json
-}
-
 migrate_dbjson() {
   if grep -qi "davewongillies/MISTer-update_stv/refs/heads/master/db\.json" /media/fat/downloader.ini; then
     sed -i -e \
@@ -106,6 +84,5 @@ migrate_dbjson() {
 print_banner
 migrate_dbjson
 manage_rbfs
-manage_mras
 
 echo update_stv.sh finished
